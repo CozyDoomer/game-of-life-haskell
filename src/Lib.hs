@@ -1,7 +1,6 @@
 module Lib where
 
 import Data.Array
-import System.Posix.Unistd
 
 width :: Int
 width = 20
@@ -72,21 +71,3 @@ updateBoard b = B (boardArray // [(i, nextCellValue i b) | i <- indices boardArr
 isBoardEmpty :: Board -> Bool
 isBoardEmpty b = not $ or [value == "O" | value <- elems boardArray]
     where boardArray = unpack b
-
-{-
- 1. clear screen
- 2. show board
- 3. wait for 0.5 seconds
- 4. recursive call with updated board
--}
-gameOfLife :: Board -> IO ()
-gameOfLife b =  --putStr . show $ isBoardEmpty b
-                if not $ isBoardEmpty b then
-                    do clearScreen
-                       displayBoard b
-                       usleep 500000
-                       gameOfLife $ updateBoard b
-                else
-                    do clearScreen
-                       putStr "Done.\n"
-
