@@ -1,7 +1,9 @@
 module Main where
 
 import Lib
-import System.Posix.Unistd
+import Control.Concurrent
+
+import Data.Array
 
 {-
  clear screen
@@ -10,14 +12,15 @@ import System.Posix.Unistd
  recursive call with updated board
 -}
 gameOfLife :: Board -> IO ()
-gameOfLife b =  if not $ isBoardEmpty b then
-                    do clearScreen
-                       displayBoard b
-                       usleep 500000
-                       gameOfLife $ updateBoard b
-                else
-                    do clearScreen
-                       putStr "Done.\n"
+gameOfLife b = if not $ isBoardEmpty b then
+                  do clearScreen
+                     displayBoard b
+                     threadDelay 500000
+                     gameOfLife $ updateBoard b
+               else
+                  do clearScreen
+                     putStr "Done.\n"
 
 main :: IO()
-main = gameOfLife rpentominoPredecessor
+main = do board <- createBoard "examples/blinker_block.txt"
+          gameOfLife board

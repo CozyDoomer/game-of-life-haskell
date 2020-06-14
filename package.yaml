@@ -1,5 +1,5 @@
 name:                game-of-life
-version:             0.1.1.0
+version:             0.2.1.0
 github:              "cozyDoomer/game-of-life-haskell"
 license:             "GPLv3"
 author:              "Christian Unterrainer"
@@ -15,7 +15,7 @@ description:         Please see the README on GitHub at https://github.com/cozyD
 dependencies:
 - base >= 4.7 && < 5
 - array
-- unix
+- polyparse
 
 library:
   source-dirs: src
