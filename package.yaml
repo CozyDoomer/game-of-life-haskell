@@ -1,23 +1,16 @@
 name:                game-of-life
-version:             0.1.0.0
-github:              "githubuser/game-of-life"
-license:             BSD3
-author:              "CozyDoomer"
-maintainer:          "example@example.com"
-copyright:           "2020 CozyDoomer"
+version:             0.1.1.0
+github:              "cozyDoomer/game-of-life-haskell"
+license:             "GPLv3"
+author:              "Christian Unterrainer"
+maintainer:          "chr.unterrainer@gmail.com"
+copyright:           "2020 Christian Unterrainer"
 
 extra-source-files:
 - README.md
 - ChangeLog.md
 
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
-
-# To avoid duplicated efforts in documentation and dealing with the
-# complications of embedding Haddock markup inside cabal files, it is
-# common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/game-of-life#readme>
+description:         Please see the README on GitHub at https://github.com/cozyDoomer/game-of-life-haskell/blob/master/README.md
 
 dependencies:
 - base >= 4.7 && < 5
