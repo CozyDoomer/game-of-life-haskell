@@ -1,21 +1,20 @@
 name:                game-of-life
 version:             0.2.1.0
 github:              "cozyDoomer/game-of-life-haskell"
-license:             "GPLv3"
+license:             "GPL-3"
 author:              "Christian Unterrainer"
 maintainer:          "chr.unterrainer@gmail.com"
 copyright:           "2020 Christian Unterrainer"
 
 extra-source-files:
 - README.md
-- ChangeLog.md
 
 description:         Please see the README on GitHub at https://github.com/cozyDoomer/game-of-life-haskell/blob/master/README.md
 
 dependencies:
 - base >= 4.7 && < 5
 - array
-- polyparse
+- gloss
 
 library:
   source-dirs: src
@@ -24,17 +23,6 @@ executables:
   game-of-life:
     main:                Main.hs
     source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - game-of-life
-
-tests:
-  game-of-life-test:
-    main:                Spec.hs
-    source-dirs:         test
     ghc-options:
     - -threaded
     - -rtsopts
